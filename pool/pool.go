@@ -163,9 +163,10 @@ func (p *CaptchaPool) GenImage() {
 		//			return
 		//		}
 
+		id, _ := uuid.NewV4()
 		if err == nil {
 			captchaBody := &CaptchaBody{
-				Id:   uuid.NewV4().String(),
+				Id:   id.String(),
 				Data: imgBytes,
 				Val:  words,
 			}
